@@ -1,0 +1,22 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Edit entry
+{% endblock %}
+
+{% block body %}
+    <form action="" method="POST" class="col">{% csrf_token %}
+        <div class="mb-3" hidden>
+            <label for="{{ form.title.id_for_label }}" class="form-label">Title:</label>
+            {{ form.title }}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.entrytext.id_for_label }}" class="form-label">Entry:</label>
+            {{ form.entrytext }}
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+        
+    </form>
+{% endblock %}
